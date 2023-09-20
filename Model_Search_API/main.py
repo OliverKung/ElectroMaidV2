@@ -4,6 +4,7 @@ import os
 option = webdriver.ChromeOptions()
 option.add_argument('--headless')
 option.add_experimental_option('excludeSwitches',['enable-logging'])
+# option.page_load_strategy = 'eager'
 url = "https://www.semiee.com/search?searchModel="
 url_download="https://www.semiee.com/"
 model = input()
@@ -25,4 +26,4 @@ html = driver.page_source
 driver.quit()
 soup = BeautifulSoup(html,'html.parser')
 link = soup.find_all('li',class_="openFile")[0].get("data-href")
-os.system("wget.exe -O "+model+".pdf -P ./Download_PDF/ "+link)
+os.system("wget.exe -P ./Download_PDF/ "+link)
