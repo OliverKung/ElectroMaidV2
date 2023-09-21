@@ -10,23 +10,9 @@ def download_pdf_1_4(id):
     url = f"https://www.semiee.com/bdxx-api/chip/detail/{id}"
     response = requests.get(url, headers=headers, cookies=cookies)
     company = response.json()
-    # print(response.text)
-    # print(response)
-
-
-    # r = requests.get(company['result']['dsFile']['path'], headers=headers,
-    #                         cookies=cookies)
-    # response_header=r.headers['content-disposition']
-    # name = name.replace('*','')
-    # name = urllib.parse.unquote(response_header)#.replace('"attachment;filename*=UTF-8''','').replace('"','')
-    # name=name.replace('attachment;filename*=UTF-8''','').replace("''",'')
-    # name=f'{name}'
     name=company['result']['dsFile']['name']
     url=company['result']['dsFile']['path']
     print(f"pdf链接为{url}")
-    # if not os.path.exists(name):
-    #     with open(f"{name}", "wb") as code:
-    #         code.write(r.content)
 
 
 headers = {
@@ -73,7 +59,3 @@ else:
         print({'model':keyword,'description':line['descri'],'company':line['brand_name']})
         if download_pdf:
             download_pdf_1_4(line['id'])
-    # df=df._append({'model':keyword,'description':line['descri'],'company':line['brand_name']},ignore_index=True)
-    # print()
-# print(response.text)
-# print(response)
