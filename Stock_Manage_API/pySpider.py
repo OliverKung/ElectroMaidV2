@@ -54,4 +54,4 @@ def get_model_description(model_name:str):
     return data
 
 if __name__=="__main__":
-    get_model_description("741")
+    print(get_model_description("741"))
