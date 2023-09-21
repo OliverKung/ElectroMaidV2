@@ -1,10 +1,14 @@
+## author:Olvk 
+## input:model you wanna search,download PDF or not
+## output:the description of search model from semiee,and download PDF from semiee.
+## date:230921
+
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import os
 option = webdriver.ChromeOptions()
 option.add_argument('--headless')
 option.add_experimental_option('excludeSwitches',['enable-logging'])
-# option.page_load_strategy = 'eager'
 url = "https://www.semiee.com/search?searchModel="
 url_download="https://www.semiee.com/"
 model = input()
