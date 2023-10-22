@@ -3,6 +3,9 @@ import pandas as pd
 global database
 database=pd.read_excel("./InCase.xlsx", "List")
 
+def printPosition(caseNumber:str,location:str):
+    match 
+
 def whereis(modelNumber:str):
     number_of_stock=0
     for index,row in database.iterrows():
